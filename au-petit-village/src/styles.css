@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+/* Crédits : 
+ * Les polices Bubbleboddy Neue sont utilisées sous licence Creative Commons - Attribution - Non Commercial (CC BY-NC). 
+ * Les polices sont fournies par Zetafonts.
+ * (Font: Bubbleboddy Neue Family by Zetafonts - http://www.zetafonts.com/collection/89)
+
+ * Les polices Comfortaa sont utilisées sous licence SIL Open Font License (OFL) version 1.1. 
+ * Les polices sont fournies par les auteurs du projet Comfortaa.
+*/
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/assets/fonts/Comfortaa-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/assets/fonts/Comfortaa-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/assets/fonts/Comfortaa-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/assets/fonts/Comfortaa-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/assets/fonts/Comfortaa-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Bubbleboddy neue';
+    src: url('/assets/fonts/BubbleboddyNeue-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Bubbleboddy neue';
+    src: url('/assets/fonts/BubbleboddyNeue-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bubbleboddy neue', sans-serif;
+}
+
+:root {
+    --color-primary: #F9D0A3;
+    --color-secondary: #FDD90B;
+    --color-dark: #151217;
+    --color-accent: #DA001E;
+}
+
+body {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+}
+
+a {
+    color: var(--color-accent);
+}
+
+.header,
+.footer {
+    background-color: var(--color-secondary);
+}
