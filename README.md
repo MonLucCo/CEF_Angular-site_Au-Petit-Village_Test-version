@@ -14,6 +14,7 @@ Accès aux spécifications : [Angular - Au Petit Village](./documentation/Devoir
   - [Technologies utilisées](#technologies-utilisées)
   - [Contribuer](#contribuer)
   - [Captures des écrans](#captures-des-écrans)
+  - [Crédits](#crédits)
   - [Contact](#contact)
 
 ## Présentation du projet
@@ -52,6 +53,11 @@ Ce projet consiste à développer un site web dynamique pour l'entreprise "Au Pe
 ## Captures des écrans
 
 (Captures d'écran des différentes pages du site)
+
+## Crédits
+
+Les polices **Bubbleboddy Neue** sont utilisées sous licence Creative Commons - Attribution - Non Commercial (CC BY-NC). Les polices sont fournies par Zetafonts.
+Les polices **Comfortaa** sont utilisées sous licence SIL Open Font License (OFL) version 1.1. Les polices sont fournies par les auteurs du projet Comfortaa.
 
 ## Contact
 
