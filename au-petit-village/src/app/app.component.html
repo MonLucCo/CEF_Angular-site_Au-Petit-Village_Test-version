@@ -1,11 +1,9 @@
-<!-- En-tête du site -->
-<app-header></app-header>
-
 <!-- Contenu principal de la page -->
-<main>
+<main class="container">
+  <!-- En-tête du site -->
+  <app-header></app-header>
   <!-- Affichage du contenu dynamique des pages en fonction des routes définies -->
   <router-outlet />
+  <!-- Pied de page du site -->
+  <app-footer></app-footer>
 </main>
-
-<!-- Pied de page du site -->
-<app-footer></app-footer>
