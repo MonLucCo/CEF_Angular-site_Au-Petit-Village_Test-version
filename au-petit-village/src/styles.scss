@@ -1,4 +1,15 @@
-/* Crédits : 
+// Customisation de Bootstrap (facultatif : pour activer la customisation, activer la ligne suivante))
+// @import 'assets/styles/bootstrap-custom';
+
+// Palette de couleurs
+:root {
+    --color-primary: #F9D0A3;
+    --color-secondary: #FDD90B;
+    --color-dark: #151217;
+    --color-accent: #DA001E;
+}
+
+/* Crédits Fonts : 
  * Les polices Bubbleboddy Neue sont utilisées sous licence Creative Commons - Attribution - Non Commercial (CC BY-NC). 
  * Les polices sont fournies par Zetafonts.
  * (Font: Bubbleboddy Neue Family by Zetafonts - http://www.zetafonts.com/collection/89)
@@ -49,9 +60,8 @@
     font-weight: 700;
 }
 
-body {
-    font-family: 'Comfortaa', sans-serif;
-}
+// Style du site
+//
 
 h1,
 h2,
@@ -62,20 +72,9 @@ h6 {
     font-family: 'Bubbleboddy neue', sans-serif;
 }
 
-:root {
-    --color-primary: #F9D0A3;
-    --color-secondary: #FDD90B;
-    --color-dark: #151217;
-    --color-accent: #DA001E;
-}
-
 body {
-    background-color: var(--color-primary);
+    font-family: 'Comfortaa', sans-serif;
     color: var(--color-dark);
-}
-
-a {
-    color: var(--color-accent);
 }
 
 .header,
