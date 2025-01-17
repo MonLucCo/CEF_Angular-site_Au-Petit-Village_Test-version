@@ -3,7 +3,27 @@
         padding: 1rem;
 
         .site-logo {
-            height: 100px;
+            height: 100%;
+            /* Utiliser 100% de la hauteur du conteneur */
+            max-height: 100px;
+            /* Limiter la hauteur maximale */
+            object-fit: contain;
+            /* Ajuster l'image pour qu'elle s'adapte au conteneur */
+        }
+
+        .contact-link {
+            font-size: 1rem;
+            color: var(--color-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            i {
+                font-size: 1.5rem;
+            }
+
+            &:hover {
+                color: var(--color-primary);
+            }
         }
 
         .social-icons {
