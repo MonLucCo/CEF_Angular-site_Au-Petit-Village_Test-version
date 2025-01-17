@@ -1,0 +1,66 @@
+.footer {
+    .footer-top {
+        padding: 1rem;
+
+        .site-logo {
+            height: 100px;
+        }
+
+        .social-icons {
+            .card-header {
+                background-color: var(--color-secondary);
+                color: var(--color-dark);
+                text-align: center;
+                font-size: 1.25rem;
+                font-weight: bold;
+                width: 100%;
+
+                @media (min-width: 768px) {
+                    text-align: left;
+                }
+            }
+
+            .card-body {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                a {
+                    font-size: 1.5rem;
+                    color: var(--color-dark);
+                    background-color: var(--color-light);
+                    border-radius: 50%;
+                    padding: 0.5rem;
+                    transition: background-color 0.3s ease;
+                    /* Ajout de la transition pour l'effet hover */
+
+                    &:hover {
+                        background-color: var(--color-primary);
+                        /* Changer la couleur de fond au survol */
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        // background-color: lighten(var(--color-secondary), 10%);
+        padding: 0.5rem;
+
+        .copyright {
+            text-align: center;
+
+            @media (min-width: 576px) {
+                text-align: left;
+            }
+        }
+
+        .powered-by {
+            text-align: center;
+
+            @media (min-width: 576px) {
+                text-align: right;
+            }
+        }
+    }
+}
