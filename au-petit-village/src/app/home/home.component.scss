@@ -78,6 +78,16 @@
         flex-direction: column;
     }
 
+    .section-separator {
+        height: 4px;
+        background-color: var(--color-primary);
+        margin: 2rem 0;
+        width: 50%;
+        max-width: 6rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     @media (min-width: 576px) {
         .product-image {
             height: 400px;
