@@ -43,7 +43,6 @@
         }
     }
 
-
     .about,
     .products,
     .contact {
@@ -64,6 +63,25 @@
 
         .form-control {
             max-width: 300px;
+        }
+    }
+
+    .product-image {
+        height: 600px;
+        /* Hauteur fixe pour les petites tailles d'écran */
+        object-fit: cover;
+        /* Ajuste l'image pour qu'elle remplisse le conteneur sans déformer */
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (min-width: 576px) {
+        .product-image {
+            height: 400px;
+            /* Hauteur fixe pour les tailles d'écran à partir de sm */
         }
     }
 
