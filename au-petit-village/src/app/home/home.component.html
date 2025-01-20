@@ -1,61 +1,54 @@
-<h1>home works!</h1>
-
-<div class="row p-3">
-    <div class="col-auto">
-        <button type="button" class="btn btn-primary">Primary</button>
-    </div>
-    <div class="col-auto">
-        <button type="button" class="btn btn-secondary" placement="bottom" ngbTooltip="Mon toolTip">Secondary</button>
-    </div>
-    <div class="col-auto">
-        <button type="button" class="btn btn-success">Tertiary</button>
-    </div>
-</div>
-
-<div ngbAccordion class="py-2">
-    <div ngbAccordionItem>
-        <h2 ngbAccordionHeader>
-            <button ngbAccordionButton>First</button>
-        </h2>
-        <div ngbAccordionCollapse>
-            <div ngbAccordionBody>
-                <ng-template>Content for the first item</ng-template>
+<div class="home">
+    <section class="hero">
+        <div class="hero-content text-center">
+            <h1>Bienvenue Au Petit Village</h1>
+            <p>Découvrez nos produits et notre histoire.</p>
+            <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary">Mieux nous connaître</a>
+                <a href="#products" class="btn btn-secondary">Notre boutique</a>
             </div>
         </div>
-    </div>
-    <div ngbAccordionItem>
-        <h2 ngbAccordionHeader>
-            <button ngbAccordionButton>Second</button>
-        </h2>
-        <div ngbAccordionCollapse>
-            <div ngbAccordionBody>
-                <ng-template>Content for the second item</ng-template>
-            </div>
-        </div>
-    </div>
-</div>
-
-<button class="btn btn-lg btn-outline-primary" (click)="modalService.open(modalTemplate)">Launch demo modal</button>
-
-<ng-template #modalTemplate let-modal>
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-        <form>
-            <div class="mb-3">
-                <label for="dateOfBirth">Date of birth</label>
-                <div class="input-group">
-                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
-                        #dp="ngbDatepicker" />
-                    <button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()"
-                        type="button"></button>
+    </section>
+    <section id="about" class="about">
+        <div class="card about-content mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/images/banner/figurine-gaulois-suivez-moi.jpg" class="img-fluid rounded-start"
+                        alt="Figurine Gaulois">
+                </div>
+                <div class="col-md-8 about-text">
+                    <div class="card-body">
+                        <h2 class="card-title">À Propos de Nous</h2>
+                        <p class="card-text">“Au petit village” est une entreprise qui confectionne des figurines
+                            inspirées de la bande dessinée
+                            Astérix et Obélix. Elle cible une population jeune entre 30 et 55 ans, nostalgique des
+                            aventures des célèbres Gaulois.</p>
+                        <div class="cta-buttons">
+                            <a href="/about" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                        <div class="card m-3">
+                            <img src="/images/banner/figurine-nos-heros.jpg" class="img-fluid rounded"
+                                alt="Figurine Gaulois">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
-    </div>
-</ng-template>
+        </div>
+    </section>
+    <section id="products" class="products">
+        <h2>Nos Produits</h2>
+        <!-- Zoning pour le catalogue des produits -->
+        <div class="product-filters">
+            <button class="btn btn-primary">Trier par prix croissant</button>
+            <button class="btn btn-primary">Trier par prix décroissant</button>
+            <input type="text" placeholder="Rechercher par nom" class="form-control" />
+        </div>
+        <div class="product-list">
+            <!-- Liste des produits -->
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contactez-Nous</h2>
+        <p>Nous sommes là pour vous aider.</p>
+    </section>
+</div>
