@@ -1,61 +1,103 @@
-<h1>home works!</h1>
-
-<div class="row p-3">
-    <div class="col-auto">
-        <button type="button" class="btn btn-primary">Primary</button>
-    </div>
-    <div class="col-auto">
-        <button type="button" class="btn btn-secondary" placement="bottom" ngbTooltip="Mon toolTip">Secondary</button>
-    </div>
-    <div class="col-auto">
-        <button type="button" class="btn btn-success">Tertiary</button>
-    </div>
-</div>
-
-<div ngbAccordion class="py-2">
-    <div ngbAccordionItem>
-        <h2 ngbAccordionHeader>
-            <button ngbAccordionButton>First</button>
-        </h2>
-        <div ngbAccordionCollapse>
-            <div ngbAccordionBody>
-                <ng-template>Content for the first item</ng-template>
+<div class="home">
+    <section class="hero">
+        <div class="hero-content text-center">
+            <h1>Bienvenue Au Petit Village</h1>
+            <p>Découvrez nos produits et notre histoire.</p>
+            <div class="cta-buttons">
+                <a href="#about" class="btn btn-primary">Mieux nous connaître</a>
+                <a href="#products" class="btn btn-secondary">Notre boutique</a>
             </div>
         </div>
-    </div>
-    <div ngbAccordionItem>
-        <h2 ngbAccordionHeader>
-            <button ngbAccordionButton>Second</button>
-        </h2>
-        <div ngbAccordionCollapse>
-            <div ngbAccordionBody>
-                <ng-template>Content for the second item</ng-template>
-            </div>
+    </section>
+    <div class="section-separator row justify-content-center">
+        <div class="col-6">
+            <div class="separator-line"></div>
         </div>
     </div>
-</div>
-
-<button class="btn btn-lg btn-outline-primary" (click)="modalService.open(modalTemplate)">Launch demo modal</button>
-
-<ng-template #modalTemplate let-modal>
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-        <form>
-            <div class="mb-3">
-                <label for="dateOfBirth">Date of birth</label>
-                <div class="input-group">
-                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
-                        #dp="ngbDatepicker" />
-                    <button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()"
-                        type="button"></button>
+    <section id="about" class="about">
+        <div class="card about-content mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/images/banner/figurine-gaulois-suivez-moi.jpg" class="img-fluid rounded-start"
+                        alt="Figurine Gaulois pointant le texte">
+                </div>
+                <div class="col-md-8 about-text">
+                    <div class="card-body">
+                        <h2 class="card-title">À Propos de Nous</h2>
+                        <p class="card-text">“Au petit village” est une entreprise qui confectionne des figurines
+                            inspirées de la bande dessinée Astérix et Obélix. Elle cible une population jeune entre 30
+                            et 55 ans, nostalgique des aventures des célèbres Gaulois.</p>
+                        <div class="cta-buttons">
+                            <a href="/about" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                        <div class="card m-3">
+                            <img src="/images/banner/figurine-nos-heros.jpg" class="img-fluid rounded"
+                                alt="Figurine des héros Gaulois">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form>
+        </div>
+    </section>
+    <div class="section-separator row justify-content-center">
+        <div class="col-6">
+            <div class="separator-line"></div>
+        </div>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
+    <section id="products" class="products">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Nos Produits</h2>
+                <div class="product-filters">
+                    <button class="btn btn-primary">Trier par prix croissant</button>
+                    <button class="btn btn-primary">Trier par prix décroissant</button>
+                    <input type="text" placeholder="Rechercher par nom" class="form-control" />
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 col-xl-3 mb-3" *ngFor="let product of products">
+                        <div class="card h-100">
+                            <img src="{{product.image}}" class="card-img-top product-image" alt="{{product.name}}">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">{{product.name}}</h3>
+                                <p class="card-text">{{product.description}}</p>
+                                <p class="card-text mt-auto"><strong>{{product.price | currency:'EUR'}}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator row justify-content-center">
+        <div class="col-6">
+            <div class="separator-line"></div>
+        </div>
     </div>
-</ng-template>
+    <section id="contact" class="contact">
+        <div class="card contact-content mb-3">
+            <div class="row g-0 flex-column flex-md-row align-items-end">
+                <div class="col-md-5">
+                    <img src="/images/banner/figurine-gaulois-satisfait.jpg" class="img-fluid rounded-start"
+                        alt="Figurine Gaulois satisfait de vous satisfaire">
+                </div>
+                <div class="col-md-7 contact-text">
+                    <div class="row flex-column flex-md-row">
+                        <div class="card-body col-12 col-md-6 d-flex flex-column justify-content-center">
+                            <h2 class="card-title">Contactez-Nous</h2>
+                            <p class="card-text">Nous sommes là pour vous aider.</p>
+                            <div class="cta-buttons">
+                                <a href="/contact" class="btn btn-primary">Pour nous contacter</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex align-items-center">
+                            <img src="/images/banner/figurine-gaulois-maison.jpg" class="img-fluid rounded"
+                                alt="Figurine d'un Gaulois portant une maison pour nous contacter">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
