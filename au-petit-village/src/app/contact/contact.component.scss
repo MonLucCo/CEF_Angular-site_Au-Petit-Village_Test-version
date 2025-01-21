@@ -52,7 +52,7 @@
 
                 /* Style pour l'astérisque */
                 &::after {
-                    content: ' (*)';
+                    content: ' *';
                     color: var(--color-accent);
                     /* Couleur de l'astérisque */
                 }
@@ -60,19 +60,19 @@
 
             .form-control:required:invalid {
                 border-color: var(--color-accent);
-                /* Bordure rouge remplacée par var(--color-accent) */
+                /* Bordure mise en évidence */
             }
 
             .form-control:required:valid {
                 border-color: var(--color-primary);
-                /* Bordure verte remplacée par var(--color-primary) */
+                /* Bordure à la couleur primaire */
             }
 
             .invalid-feedback {
                 display: none;
                 /* Cache les messages d'erreur par défaut */
                 color: var(--color-accent);
-                /* Couleur rouge remplacée par var(--color-accent) */
+                /* Couleur de la mise en évidence */
             }
 
             .form-control:invalid+.invalid-feedback {
@@ -91,6 +91,11 @@
                 /* Ajoute du padding au bouton */
                 font-size: 1rem;
                 /* Taille de la police du bouton */
+
+                &.hidden {
+                    display: none;
+                    /* Masque le bouton lorsqu'il est inactif */
+                }
             }
         }
     }
