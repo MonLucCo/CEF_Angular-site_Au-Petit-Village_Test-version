@@ -1,0 +1,97 @@
+.contact-page {
+    .hero {
+        position: relative;
+        height: 50vh;
+        /* 50% de la hauteur de l'écran */
+        background: url('/images/banner/figurine-casque-gaulois.jpg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--color-light);
+
+        .hero-content {
+            background-color: rgba(250, 250, 250, 0.5);
+            /* Fond semi-transparent pour améliorer la lisibilité */
+            padding: 2rem;
+            border-radius: 10px;
+        }
+    }
+
+    .section-separator {
+        height: 2px;
+        background-color: var(--color-primary);
+        margin: 2rem 0;
+        width: 50%;
+        max-width: 6rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-details {
+        padding: 2rem 0;
+
+        h2 {
+            background-color: var(--color-secondary);
+            /* Fond coloré */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            /* Ombre de texte */
+            padding: 0.5rem 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        form {
+            .form-label {
+                font-weight: bold;
+                /* Met en gras les labels des champs du formulaire */
+
+                /* Style pour l'astérisque */
+                &::after {
+                    content: ' (*)';
+                    color: var(--color-accent);
+                    /* Couleur de l'astérisque */
+                }
+            }
+
+            .form-control:required:invalid {
+                border-color: var(--color-accent);
+                /* Bordure rouge remplacée par var(--color-accent) */
+            }
+
+            .form-control:required:valid {
+                border-color: var(--color-primary);
+                /* Bordure verte remplacée par var(--color-primary) */
+            }
+
+            .invalid-feedback {
+                display: none;
+                /* Cache les messages d'erreur par défaut */
+                color: var(--color-accent);
+                /* Couleur rouge remplacée par var(--color-accent) */
+            }
+
+            .form-control:invalid+.invalid-feedback {
+                display: block;
+                /* Affiche les messages d'erreur lorsque le champ est invalide */
+            }
+
+            .btn-primary {
+                background-color: var(--color-primary);
+                /* Couleur de fond du bouton */
+                border: none;
+                /* Supprime la bordure par défaut du bouton */
+                color: var(--color-light);
+                /* Couleur du texte du bouton */
+                padding: 0.75rem 1.5rem;
+                /* Ajoute du padding au bouton */
+                font-size: 1rem;
+                /* Taille de la police du bouton */
+            }
+        }
+    }
+}
