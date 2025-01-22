@@ -46,7 +46,7 @@
     </div>
     <section id="products" class="products">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header products-header">
                 <h2 class="card-title">Nos Produits</h2>
                 <div class="product-filters">
                     <button class="btn btn-primary">Trier par prix croissant</button>
@@ -57,11 +57,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 col-xl-3 mb-3" *ngFor="let product of products">
-                        <div class="card h-100">
+                        <div class="card h-100 product-card" (click)="viewProduct(product)">
                             <img src="{{product.image}}" class="card-img-top product-image" alt="{{product.name}}">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">{{product.name}}</h3>
-                                <p class="card-text">{{product.description}}</p>
+                                <p class="card-text">{{product.legende}}</p>
                                 <p class="card-text mt-auto"><strong>{{product.price | currency:'EUR'}}</strong></p>
                             </div>
                         </div>
