@@ -1,1 +1,69 @@
-<p>contact works!</p>
+<div class="contact-page">
+    <section class="hero">
+        <div class="hero-content text-center">
+            <h1>Contactez-Nous</h1>
+            <p>Nous sommes là pour vous aider. N'hésitez pas à nous contacter pour toute question ou demande.</p>
+        </div>
+    </section>
+    <div class="section-separator row justify-content-center">
+        <div class="col-6">
+            <div class="separator-line"></div>
+        </div>
+    </div>
+    <section class="contact-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Informations de Contact</h2>
+                    <div class="mb-3 p-3">
+                        <p><strong>Adresse : </strong>123 Rue des Gaulois, 75000 Paris, France</p>
+                        <p><strong>Téléphone : </strong>+33 1 23 45 67 89</p>
+                        <p><strong>Email : </strong>contact&#64;aupetitvillage.fr</p>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <img src="/images/banner/figurine-gaulois-smartphone-contact.jpg" class="img-fluid rounded w-50"
+                            alt="Figurine d'un Gaulois montrant un smartphone">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Formulaire de Contact</h2>
+                    <form (ngSubmit)="onSubmit($event.target)" (input)="checkFormValidity($event.target)" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="name" required>
+                            <div class="invalid-feedback">
+                                Veuillez entrer votre nom.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Veuillez entrer une adresse email valide.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Sujet</label>
+                            <input type="text" class="form-control" id="subject" required>
+                            <div class="invalid-feedback">
+                                Veuillez entrer le sujet de votre message.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                            <div class="invalid-feedback">
+                                Veuillez entrer votre message.
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary" [class.hidden]="!isFormValid">Envoyer</button>
+                        </div>
+                        <div *ngIf="!isFormValid" class="text-center text-danger mt-3"> Veuillez remplir tous les champs
+                            obligatoires pour afficher le bouton de soumission. </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
