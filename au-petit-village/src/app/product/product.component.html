@@ -1,1 +1,21 @@
-<p>product works!</p>
+<div class="product-page">
+    <div class="container">
+        <div class="row m-3">
+            <div class="col-md-6">
+                <img [src]="product.imageUrl" alt="{{ product.name }}" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 card p-0">
+                <div class="card-title card-header text-center">
+                    <h1>{{ product.name }}</h1>
+                </div>
+                <div class="card-body">
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="card-footer text-end">
+                    <p class="price m-0">Prix : <strong>{{ product.price | currency:'EUR' }}</strong></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
