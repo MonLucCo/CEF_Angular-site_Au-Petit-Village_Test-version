@@ -76,6 +76,20 @@
     .card {
         display: flex;
         flex-direction: column;
+
+        .products-header {
+            background-color: var(--color-primary);
+        }
+
+        .product-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow .3s ease;
+
+            &:hover {
+                transform: translate(+10px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
     }
 
     .section-separator {
