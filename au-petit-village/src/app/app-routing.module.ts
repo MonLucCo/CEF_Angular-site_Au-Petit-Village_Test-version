@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'product/:id', component: ProductComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '**', component: Error404Component }    // Route pour la page "error 404"
+  { path: 'error404', component: Error404Component },
+  { path: '**', component: Error404Component }    // Route "wildcard" pour la page "error 404"
 ];
 
 @NgModule({
