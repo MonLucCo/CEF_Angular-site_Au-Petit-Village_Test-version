@@ -9,9 +9,10 @@ import { Error404Component } from './error404/error404.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'product', component: ProductComponent },
+  { path: 'product/:id', component: ProductComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '**', component: Error404Component }    // Route pour la page "error 404"
+  { path: 'error404', component: Error404Component },
+  { path: '**', component: Error404Component }    // Route "wildcard" pour la page "error 404"
 ];
 
 @NgModule({

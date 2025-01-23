@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductsService } from '../services/products/products.service';
 
 @Component({
   selector: 'app-product',
@@ -8,15 +9,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  product: any;
+  product: any = {};
   liked: boolean = false;
   expandedParagraphs: number[] = [1];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productsService: ProductsService
+  ) { }
 
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.product = JSON.parse(params['product']);
+  async ngOnInit(): Promise<void> {
+    this.route.params.subscribe(async params => {
+      const productId = +params['id'];  // +params pour convertir en numérique la chaîne de caractères
+      this.product = await this.productsService.getProductById(productId);
+      if (!this.product) {
+        this.router.navigate(['/error404']);
+      }
     });
   }
 
