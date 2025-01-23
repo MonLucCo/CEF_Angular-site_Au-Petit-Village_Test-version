@@ -1,0 +1,33 @@
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border: none;
+    /* Enlever la bordure */
+    transition: background-color 0.3s ease, border 0.3s ease, font-weight 0.3s ease;
+
+    /* Ajouter une transition pour l'effet hover */
+    &:hover {
+        border: 2px solid var(--color-dark);
+        /* Ajouter une bordure au survol */
+        font-weight: bold;
+        /* Mettre le texte en gras au survol */
+    }
+}
+
+
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+    border: none;
+    /* Enlever la bordure */
+    transition: background-color 0.3s ease, border 0.3s ease, font-weight 0.3s ease;
+
+    /* Ajouter une transition pour l'effet hover */
+    &:hover {
+        border: 2px solid var(--color-dark);
+        /* Ajouter une bordure au survol */
+        font-weight: bold;
+        /* Mettre le texte en gras au survol */
+    }
+}
