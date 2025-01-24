@@ -4,18 +4,24 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductsService {
-  private productsUrl = '/datas/products.json';
+  private datasUrl = '/datas/products.json';
 
   constructor() { }
 
   async getProducts(): Promise<any[]> {
-    const response = await fetch(this.productsUrl);
+    const response = await fetch(this.datasUrl);
     const data = await response.json();
-    return data;
+    return data.products;
   }
 
   async getProductById(id: number): Promise<any> {
     const products = await this.getProducts();
     return products.find(product => product.id === id);
+  }
+
+  async getHistory(): Promise<any[]> {
+    const response = await fetch(this.datasUrl);
+    const data = await response.json();
+    return data.history;
   }
 }
