@@ -24,4 +24,9 @@ export class ProductsService {
     const data = await response.json();
     return data.history;
   }
+
+  async getProductNames(): Promise<string[]> {
+    const products = await this.getProducts();
+    return products.map(product => product.name);
+  }
 }

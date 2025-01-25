@@ -10,8 +10,12 @@ import { ProductsService } from '../services/products/products.service';
 })
 export class HomeComponent implements OnInit {
   products: any[] = [];
+  productNames: string[] = [];
+  originalProducts: any[] = []; // Une propriété pour stocker la liste originale des produits
   isSortEnabled: boolean = false;
+  isSearchEnabled: boolean = false;
   sortOrder: string = '';
+  selectedProductName: string = '';
 
   constructor(
     private router: Router,
@@ -20,26 +24,13 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.products = await this.productsService.getProducts();
+    this.originalProducts = [...this.products]; // Stocker la liste originale des produits
+    this.productNames = await this.productsService.getProductNames();
+    this.productNames = [...new Set(this.productNames)].sort((a, b) => a.localeCompare(b)); // Supprimer les doublons et trier par ordre alphabétique
   }
 
   viewProduct(product: any): void {
     this.router.navigate(['/product', product.id]);
-  }
-
-  get sortedProducts(): any[] {
-    if (this.isSortEnabled) {
-      return this.products.slice().sort((a, b) => {
-        if (this.sortOrder === 'asc') {
-          return a.price - b.price;
-        } else if (this.sortOrder === 'desc') {
-          return b.price - a.price;
-        } else {
-          return 0;
-        }
-      });
-    } else {
-      return this.products;
-    }
   }
 
   onSortEnabledChange(): void {
@@ -47,6 +38,18 @@ export class HomeComponent implements OnInit {
       this.sortOrder = 'asc';
     } else {
       this.sortOrder = '';
+      this.products = [...this.originalProducts]; // Réinitialiser la liste des produits
     }
+  }
+
+  onSearchEnabledChange(): void {
+    if (!this.isSearchEnabled) {
+      this.selectedProductName = '';
+    }
+  }
+
+  onProductNameChange(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    this.selectedProductName = target.value;
   }
 }

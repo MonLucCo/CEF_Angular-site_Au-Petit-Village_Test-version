@@ -49,6 +49,7 @@
             <div class="card-header products-header">
                 <h2 class="card-title">
                     Nos Produits
+                    <span *ngIf="selectedProductName"> - {{ selectedProductName }} - </span>
                     <span *ngIf="isSortEnabled">
                         triés par prix
                         <span *ngIf="sortOrder === 'asc'">croissant</span>
@@ -56,30 +57,48 @@
                     </span>
                     <span *ngIf="!isSortEnabled">non triés</span>
                 </h2>
-                <div class="product-filters d-flex flex-row align-items-center">
-                    <div class="filter-btn">
-                        <input class="filter-item" type="checkbox" [(ngModel)]="isSortEnabled"
-                            (change)="onSortEnabledChange()" id="sortCheckbox">
-                        <label class="filter-item" for="sortCheckbox">Trier</label>
-                    </div>
-                    <div class="radio-group d-flex flex-column" *ngIf="isSortEnabled">
-                        <div class="filter-btn d-flex flex-row gap-1">
-                            <input class="filter-item" type="radio" [(ngModel)]="sortOrder" value="asc" id="sortAsc">
-                            <label class="filter-item" for="sortAsc">Prix croissant</label>
+                <div class="product-filters d-flex flex-wrap align-items-center">
+                    <div class="filter-sort d-flex flex-row align-items-center gap-3">
+                        <div class="filter-btn">
+                            <input class="filter-item" type="checkbox" [(ngModel)]="isSortEnabled"
+                                (change)="onSortEnabledChange()" id="sortCheckbox">
+                            <label class="filter-item" for="sortCheckbox">Trier</label>
                         </div>
-                        <div class="filter-btn d-flex flex-row gap-1">
-                            <input class="filter-item" type="radio" [(ngModel)]="sortOrder" value="desc" id="sortDesc">
-                            <label class="filter-item" for="sortDesc">Prix décroissant</label>
+                        <div class="radio-group d-flex flex-column" *ngIf="isSortEnabled">
+                            <div class="filter-btn d-flex flex-row gap-1">
+                                <input class="filter-item" type="radio" [(ngModel)]="sortOrder" value="asc"
+                                    id="sortAsc">
+                                <label class="filter-item" for="sortAsc">Prix croissant</label>
+                            </div>
+                            <div class="filter-btn d-flex flex-row gap-1">
+                                <input class="filter-item" type="radio" [(ngModel)]="sortOrder" value="desc"
+                                    id="sortDesc">
+                                <label class="filter-item" for="sortDesc">Prix décroissant</label>
+                            </div>
                         </div>
-
                     </div>
-                    <input type="text" placeholder="Rechercher par nom" class="form-control" />
+                    <div class="filter-search d-flex flex-row align-items-center gap-3">
+                        <div class="filter-btn">
+                            <input class="filter-item" type="checkbox" [(ngModel)]="isSearchEnabled"
+                                (change)="onSearchEnabledChange()" id="searchCheckbox">
+                            <label class="filter-item" for="searchCheckbox">Rechercher</label>
+                        </div>
+                        <div class="filter-btn" *ngIf="isSearchEnabled">
+                            <select class="filter-btn form-control" [(ngModel)]="selectedProductName"
+                                (change)="onProductNameChange($event)">
+                                <option value="" disabled selected>Rechercher par nom</option>
+                                <option *ngFor="let productName of productNames" [value]="productName">
+                                    {{ productName }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 col-xl-3 mb-3"
-                        *ngFor="let product of sortedProducts | sortByPrice:sortOrder">
+                        *ngFor="let product of products | filterByName:selectedProductName | sortByPrice:sortOrder">
                         <div class="card h-100 product-card" (click)="viewProduct(product)">
                             <img src="{{product.image}}" class="card-img-top product-image" alt="{{product.name}}">
                             <div class="card-body d-flex flex-column">
