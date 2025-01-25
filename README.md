@@ -23,16 +23,22 @@ Ce projet consiste à développer un site web dynamique pour l'entreprise "Au Pe
 
 ## Installation
 
-(Instructions pour cloner le repository et installer les dépendances)
+(Instructions pour cloner le repository et installer les dépendances - ADU)
+
+Le projet utilise un CDN pour exploiter les librairies Bootstrap 5.3 et Font-Awesome.
+L'installation du projet Angular a été faite avec l'option standalone : false'.
 
 ## Utilisation
 
-(Instructions pour lancer le projet localement)
+(Instructions pour lancer le projet localement - ADU)
+
+Pour lancer le projet, aller dans le dossier `au-petit-village` et lancer le serveur (fenêtre du navigateur en [localhost](http://localhost:4200/)).
 
 ## Fonctionnalités
 
 - Présentation de l'entreprise
 - Catalogue des produits
+- Service de données
 - Tri par prix croissant et décroissant
 - Recherche par nom
 - Détails des produits
@@ -48,11 +54,11 @@ Ce projet consiste à développer un site web dynamique pour l'entreprise "Au Pe
 
 ## Contribuer
 
-(Instructions pour contribuer au projet)
+(Instructions pour contribuer au projet - ADU)
 
 ## Captures des écrans
 
-(Captures d'écran des différentes pages du site)
+Les captures d'écran des différentes pages du site sont disponibles dans le dossier [screenshoots](./documentation/screenshots).
 
 ## Crédits
 
@@ -61,4 +67,4 @@ Les polices **Comfortaa** sont utilisées sous licence SIL Open Font License (OF
 
 ## Contact
 
-(Informations de contact pour le support ou les questions)
+(Informations de contact pour le support ou les questions - ADU)
