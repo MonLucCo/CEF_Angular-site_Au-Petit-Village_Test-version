@@ -12,10 +12,10 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: false
 })
 export class FilterByNamePipe implements PipeTransform {
-  transform(array: any[], searchTerm: string): any[] {
-    if (!Array.isArray(array) || !searchTerm) {
-      return array;
+  transform(products: any[], tag: string): any[] {
+    if (!tag) {
+      return products;
     }
-    return array.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    return products.filter(product => product.tags.includes(tag));
   }
 }

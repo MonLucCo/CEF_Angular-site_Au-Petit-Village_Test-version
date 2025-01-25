@@ -4,7 +4,7 @@
 
 ### Description
 
-Le pipe `FilterByNamePipe` permet de filtrer un tableau d'objets par nom en utilisant une recherche par "contient ...".
+Le pipe `FilterByNamePipe` permet de filtrer une liste de produits en fonction des tags sélectionnés. Ce pipe est utile pour afficher uniquement les produits correspondant à un terme `searchTerm` spécifique définit en paramètre.
 
 ### Utilisation
 
