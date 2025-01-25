@@ -1,5 +1,6 @@
 .footer {
     .footer-top {
+        background-color: var(--color-primary);
         padding: 1rem;
 
         .site-logo {
@@ -22,7 +23,7 @@
             }
 
             &:hover {
-                color: var(--color-primary);
+                color: var(--color-accent);
             }
         }
 
