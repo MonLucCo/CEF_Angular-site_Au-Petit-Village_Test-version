@@ -24,4 +24,17 @@ export class ProductsService {
     const data = await response.json();
     return data.history;
   }
+
+  async getProductNames(): Promise<string[]> {
+    const products = await this.getProducts();
+    const productNames = products.map(product => product.name);
+    return [...new Set(productNames)].sort((a, b) => a.localeCompare(b)); // Supprimer les doublons et trier par ordre alphabétique
+
+  }
+
+  async getProductTags(): Promise<string[]> {
+    const products = await this.getProducts();
+    const tags = products.flatMap(product => product.tags);
+    return [...new Set(tags)].sort((a, b) => a.localeCompare(b)); // Supprimer les doublons et trier par ordre alphabétique
+  }
 }

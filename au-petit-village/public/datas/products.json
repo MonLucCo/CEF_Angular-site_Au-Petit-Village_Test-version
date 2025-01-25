@@ -6,6 +6,11 @@
             "price": 19.99,
             "image": "/images/products/figurine-asterix-potion.jpg",
             "legende": "Figurine de Astérix, le célèbre Gaulois.",
+            "tags": [
+                "Astérix",
+                "Potion",
+                "Personnage BD"
+            ],
             "details": {
                 "description": [
                     {
@@ -62,6 +67,11 @@
             "price": 24.99,
             "image": "/images/products/figurine-obelix.jpg",
             "legende": "Figurine de Obélix, le fidèle compagnon de Astérix.",
+            "tags": [
+                "Obélix",
+                "Satisfait",
+                "Personnage BD"
+            ],
             "details": {
                 "description": [
                     {
@@ -118,6 +128,12 @@
             "price": 29.99,
             "image": "/images/products/figurine-panoramix.jpg",
             "legende": "Figurine de Panoramix, le fameux druide Gaulois qui prépare la potion magique.",
+            "tags": [
+                "Panoramix",
+                "Potion",
+                "Satisfait",
+                "Personnage BD"
+            ],
             "details": {
                 "description": [
                     {
@@ -174,6 +190,12 @@
             "price": 17.99,
             "image": "/images/products/figurine-gaulois-barman-biere.jpg",
             "legende": "Figurine de soldat Gaulois livrant une bière (de l'hydromel !).",
+            "tags": [
+                "Gaulois",
+                "Barman",
+                "Soldat",
+                "Hydromel"
+            ],
             "details": {
                 "description": [
                     {
@@ -230,6 +252,13 @@
             "price": 24.99,
             "image": "/images/products/figurine-gaulois-barman-vin.jpg",
             "legende": "Figurine de soldat Gaulois livrant un ''petit rouge''.",
+            "tags": [
+                "Gaulois",
+                "Barman",
+                "Soldat",
+                "Vin",
+                "Décalé"
+            ],
             "details": {
                 "description": [
                     {
@@ -286,6 +315,13 @@
             "price": 29.99,
             "image": "/images/products/figurine-gaulois-barman-hamburger.jpg",
             "legende": "Figurine de de soldat Gaulois livrant un Hamburger (un délice des Dieux !).",
+            "tags": [
+                "Gaulois",
+                "Barman",
+                "Hambourger",
+                "Soldat",
+                "Décalé"
+            ],
             "details": {
                 "description": [
                     {
@@ -342,6 +378,12 @@
             "price": 19.99,
             "image": "/images/products/figurine-gaulois-smartphone.jpg",
             "legende": "Figurines du Gaulois découvrant un smartphone.",
+            "tags": [
+                "Gaulois",
+                "Smartphone",
+                "Soldat",
+                "Décalé"
+            ],
             "details": {
                 "description": [
                     {
@@ -398,6 +440,11 @@
             "price": 19.90,
             "image": "/images/products/figurine-gaulois-arrangue.jpg",
             "legende": "Figurine du Gaulois chanteur.",
+            "tags": [
+                "Gaulois",
+                "Chanteur",
+                "Décalé"
+            ],
             "details": {
                 "description": [
                     {
@@ -454,6 +501,13 @@
             "price": 39.99,
             "image": "/images/products/figurine-gaulois-moderne-scotter.jpg",
             "legende": "Figurine du soldat Gaulois moderne (sur son vespa...).",
+            "tags": [
+                "Gaulois",
+                "Vespa",
+                "Soldat",
+                "Satisfait",
+                "Décalé"
+            ],
             "details": {
                 "description": [
                     {
