@@ -11,6 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
 import { Error404Component } from './error404/error404.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SortByPricePipe } from './pipes/sort-by-price/sort-by-price.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AboutComponent,
     ContactComponent,
     ProductComponent,
-    Error404Component
+    Error404Component,
+    SortByPricePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule
   ],
   providers: [],

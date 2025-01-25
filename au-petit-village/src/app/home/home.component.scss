@@ -56,9 +56,20 @@
         gap: 1rem;
         margin-bottom: 2rem;
 
-        .btn {
-            background-color: var(--color-secondary);
-            color: var(--color-light);
+        .filter-btn {
+            display: flex;
+            flex-direction: row;
+            gap: 0.25rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .filter-item {
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .form-control {

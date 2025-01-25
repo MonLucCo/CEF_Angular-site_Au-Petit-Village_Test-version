@@ -10,6 +10,8 @@ import { ProductsService } from '../services/products/products.service';
 })
 export class HomeComponent implements OnInit {
   products: any[] = [];
+  isSortEnabled: boolean = false;
+  sortOrder: string = '';
 
   constructor(
     private router: Router,
@@ -22,5 +24,29 @@ export class HomeComponent implements OnInit {
 
   viewProduct(product: any): void {
     this.router.navigate(['/product', product.id]);
+  }
+
+  get sortedProducts(): any[] {
+    if (this.isSortEnabled) {
+      return this.products.slice().sort((a, b) => {
+        if (this.sortOrder === 'asc') {
+          return a.price - b.price;
+        } else if (this.sortOrder === 'desc') {
+          return b.price - a.price;
+        } else {
+          return 0;
+        }
+      });
+    } else {
+      return this.products;
+    }
+  }
+
+  onSortEnabledChange(): void {
+    if (this.isSortEnabled) {
+      this.sortOrder = 'asc';
+    } else {
+      this.sortOrder = '';
+    }
   }
 }
